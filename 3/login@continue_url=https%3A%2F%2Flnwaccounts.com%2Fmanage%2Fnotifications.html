@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>เข้าสู่ระบบ - LnwAccounts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="LnwAccounts ระบบข้อมูลบัญชีของสมาชิก Lnw สมาชิกเทพทุกคนจะมีบัญชีของตนเอง เพื่อใช้เข้าสู่ระบบผลิตภัณฑ์ต่างๆของ Lnw Co., Ltd. - บรัษัท แอลเอ็นดับเบิ้ลยู จำกัด" />
+<meta name="keywords" content="LnwAccounts, Account, บัญชี , เทพ, Lnw, แอลเอ็นดับเบิ้ลยู" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<script language="JavaScript" type="text/javascript" src="https://lnwaccounts.com/external/jquery/jquery-1.11.0.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://lnwaccounts.com/external/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+	function base_url(uri) { return "https://lnwaccounts.com/" + (uri === undefined ? "" : uri); }
+	function site_url(uri) { return "https://lnwaccounts.com/" + (uri === undefined ? "" : uri); }
+	function template_url(uri) { return "" + (uri === undefined ? "" : uri); }
+</script>
+
+<script language="JavaScript" type="text/javascript">
+	function _add_settings_data(settings, name, value) {
+		if(typeof settings.data == 'undefined' || settings.data == null || settings.data == '') {
+			settings.data = name + '=' + value;
+		} else if(typeof settings.data=='string') {
+			settings.data += '&' + name + '=' + value;
+		} else if($.isArray(settings.data)) {
+			settings.data.push({name: name, value: value});
+		} else if(typeof FormData !== 'undefined') {
+			settings.data.append(name, value);
+		}
+	}
+	$(document).ready(function() {
+		//if(window.top.location.href != window.location.href)
+			//window.top.location.href = window.location.href;
+		if(window.top != window)
+			$('body').html("<h1 style='margin: 200px;'><a href='" + window.location.href + "' target='_top'>Click here to enter</a></h1>");
+
+		$.ajaxSetup({
+			dataType: "html",
+			cache: false
+		});
+		$(this).ajaxSend(function(e, xhr, settings) {
+			if(!settings.data){
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			}
+			_add_settings_data(settings, 'ajaxxxx', true);
+			_add_settings_data(settings, 'ajaxxxx_dataType', settings.dataType);
+		});
+	});
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="https://lnwaccounts.com/system/application/modules/lnwaccounts/_css/style.css?_=20200812" />
+<link rel="stylesheet" type="text/css" href="https://lnwaccounts.com/system/application/modules/lnwaccounts/_css/font.css" />
+<link rel="stylesheet" type="text/css" href="https://lnwaccounts.com/system/application/modules/lnwbar/_css/color_style.min.css?t=20190306" />
+<script language="JavaScript" type="text/javascript" src="https://lnwaccounts.com/system/application/js/jquery.lnwbox.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://lnwaccounts.com/system/application/js/cufon/cufon-yui.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://lnwaccounts.com/system/application/js/cufon/font/supermarket_400.font.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://lnwaccounts.com/system/application/js/jquery.lnwbox2.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://lnwaccounts.com/system/application/js/jquery.lnwajax.js"></script>
+<script language="JavaScript" type="text/javascript" src="https://lnwaccounts.com/system/application/js/jquery.cookie.js"></script>
+<script language="JavaScript" type="text/javascript">
+var LNWACCOUNTS_COOKIE_DATA = 'UXhQNlB3BGFQbFZiVDtZL1J1UzZXPAA6ATBTP1N7UgpUclw8Xm1fU1piUDNVJgE5VS5VOAU2CjZeeVN5BSBZaQA4UjldZFA5UndXDQMhVWNRc1AkUGgEaVBnVlJUPFkwUnVTb1c2ADIBOVMiU2pSeVQnXDhebF9vWmRQIlVqAXdVU1VnBWAKJV5hU2UFLlkoAAtSJV1xUDNSYlcmAzdVYlFfUCNQaARrUGxWL1RvWTpSIlM5VzwAfwF3UyVTZlI4VGBcK14tXzZaOlBhVTQBMVU8VTYFPQo2XmJTYwUuWSgAMVIoXXVQJVJiV3ADaFVoUXVQO1BtBHs=';var LNWACCOUNTS_CONTINUE_URL = 'https://lnwaccounts.com/manage/notifications';
+</script>
+<link rel="shortcut icon" href="https://lnwaccounts.com/system/application/modules/lnwbar/_images/lnw_favicon.ico">
+<link rel="icon" href="https://lnwaccounts.com/system/application/modules/lnwbar/_images/lnw_favicon.gif" type="image/gif">
+</head>
+<body>
+<!-- 31.43.155.82 -->
+<!-- b09b4e595c33fbf0de9f.b--6JZLwBcz84B8FYgXQFL5p.58cd9965f7d07a74e2a0 - 0.0451 -->
+<div id="lb" class="lb_lnwaccounts">
+    <div id="lbWrapper">
+        <div id="lbProduct">
+            <div class="main">
+                <img src="https://lnwaccounts.com/system/application/modules/lnwbar/_images/logo2016/lnwaccounts_white.png" alt="lnwaccounts logo" />
+            </div>
+        </div>
+        <div id="lbMember">
+            <a href="https://lnwaccounts.com/login?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications" rel="nofollow" class="lblogin"><span class="ico"></span><span class="txt"> เข้าสู่ระบบ</span></a><a href="https://lnwaccounts.com/register?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications" class="lbregister" rel="nofollow"><span class="ico"></span><span class="txt"> สมัครสมาชิก</span></a>
+        </div>
+    </div>
+</div>
+
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '290100101007516',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+	<div id="id_content" class="" align="center">
+<!-- Header -->
+<div class="header" align="center">
+	<h1><img src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/lnw_logo_h50.png" style="vertical-align: middle;" height="40" alt="Lnw" /></h1>
+	<h2>เพียงบัญชีเดียว ก็ใช้ได้ทุกเว็บเทพ</h2>
+			<h3>สะดวก. รวดเร็ว. ปลอดภัย.</h3>
+		
+</div>
+
+<div style="clear: both;"></div>
+
+<!-- Content -->
+<div class="login_plate">
+	<div class="right_container">
+	<div class="login_container">
+						<div class="login_div" style="padding: 30px 40px; ">
+			<form id="login_form" method="post" style="margin: 0px;" action="https://lnwaccounts.com/3/login/submit?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications">
+				<div style="margin-bottom: 20px;">
+									<img src="https://lnwaccounts.com/system/application/modules/lnwbar/_images/lnwguild/lnwaccounts_logo.png" alt="LnwAccounts" height="15" style="margin-top:5px; float:right"  border="0" />
+									<h2>เข้าสู่ระบบ</h2>
+					<div class="clear"></div>
+				</div>
+								<div id="login-with-password-button" class="button  button-password trim"><span class="logo"></span>เข้าสู่ระบบด้วย รหัสผ่าน</div>
+				<div class="clear"></div>
+				<section id="new_password" style="display:none;">
+					<div id="new_password_form" class="login_div">
+						<b style="color: #4285F4; line-height: 18px;">กรุณาตั้งรหัสผ่านของคุณ เพื่อความรวดเร็วในการเข้าสู่ระบบครั้งถัดไป</b>
+						<div style="position:relative;">
+							<div class="suggest_box pass_note">
+								<ul style="line-height: 20px; padding:0px; margin: 0px 0px 0px 20px;">
+									<li><u>ต้องมีอย่างน้อย 8 อักขระ</u></li>
+									<li>ไม่ควรใช้รหัสผ่านจากเว็บอื่น</li>
+									<li>ควรมีตัวอักษร ตัวเลข และสัญลักษณ์ต่างๆ ผสมกัน</li>
+								</ul>
+							</div>
+						</div>
+						<label><b>สร้างรหัสผ่านใหม่<span style="cursor: pointer" class="note pass_help">ข้อแนะนำ <img src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/icon_help.png" alt="icon help" /></span></b>
+							<input type="password" placeholder="อย่างน้อย 8 อักขระ" class="input_text" name="new_password" /><span class="varidate-sign"></span><span class="error_message"></span></label>
+						<label><b>กรอกรหัสผ่านอีกครั้ง</b>
+							<input type="password" class="input_text" name="re_password" /><span class="varidate-sign"></span><span class="error_message"></span></label>
+						<div class="clear20"></div>
+						<input type="submit" style="display:inline-block; " class="button button-login trim b-login" value="บันทึก" /> <div class="button-skip">ไว้ภายหลัง</div>
+					</div>
+				</section>
+				<section id="login-with-lnw" style="display:none;">
+				<div id="mobile_form">
+					<div class="mobile_container">
+						<input type="number" pattern="[0-9]*" class="input_text" placeholder="เบอร์มือถือ" name="mobile_number" value="" />
+						<div class="otp_button">รับ SMS</div>
+					</div>
+					<span class="varidate-sign"></span><span class="error_message"></span>
+					<div class="already_password" style="display:none;">
+						เบอร์นี้คุณเคยตั้งรหัสผ่านแล้ว						<a class="change_mode" id="change_to_password" href="javascript:void(0)">เปลี่ยนเป็นเข้าสู่ระบบด้วยรหัสผ่าน ?</a>
+					</div>
+					<div style="height: 20px;"></div>
+					<input disabled type="number" pattern="[0-9]*" class="input_text" placeholder="รหัสที่ได้รับผ่าน SMS"  name="otp_password" /><span class="varidate-sign"></span><span class="error_message"></span>
+					<div class="otp_message"></div>
+				</div>
+				<div id="password_form">
+					<div>
+						<input type="text" class="input_text" placeholder="อีเมลหรือเบอร์มือถือ" name="username" value="" /><span class="varidate-sign"></span><span class="error_message"></span>
+					</div>
+					<div style="margin-top: 20px;">
+						<input type="password" autocomplete="current-password" class="input_text" placeholder="รหัสผ่าน"  name="password" /><span class="varidate-sign"></span><span class="error_message"></span>
+					</div>
+				</div>
+				<div style="margin-bottom: 10px; margin-top: 20px;">
+						<label for="persistent"><div class="input_checkbox">
+							<input id="persistent" type="checkbox" name="persistent" value="1"  /> <span>จดจำฉันไว้ในครั้งหน้า</span>
+						</div></label>
+					</div>
+								<div style="margin-top: 0px; padding-bottom: 20px;">
+					<input type="submit" class="button  button-login trim b-login" value="เข้าสู่ระบบ" />
+					<a class="forget_a" style="margin-top: 10px; display:inline-block;" href="https://lnwaccounts.com/forgot_password?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications">ลืมรหัสผ่าน ?</a>
+					 หรือ <a class="change_mode" onclick="$('.line_clear, #mobile_form, #password_form, #login-with-mobile-button, #login-with-password-button, .social_login, .register_div').show(); $('#login-with-lnw').hide();" href="javascript:void(0)">เปลี่ยนวิธีการเข้าสู่ระบบ</a>
+					<div class="clear"></div>
+				</div>
+				</section>
+			</form>
+					<div class="social_login">
+				<h3 style="margin: 20px 0 10px;">หรือ เข้าสู่ระบบด้วย</h3>
+                <div class="login_button">
+                                    <div class="facebook_login">
+                                                                                                <script language="JavaScript" type="text/javascript">
+function FB_login() {
+ var require_scope = 'public_profile,email,user_birthday';
+ FB.login(function(response) {
+   if (response.authResponse) {
+     //console.log('Welcome!  Fetching your information.... ');
+     top.window.location.href = 'https://lnwaccounts.com/3/login/facebook?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications';
+     //FB.api('/me', function(response) {
+       //console.log('Good to see you, ' + response.name + '.');
+     //});
+   } else {
+     //console.log('User cancelled login or did not fully authorize.');
+   }
+ }, {
+   scope: require_scope,
+   return_scopes: true,
+   auth_type: 'rerequest'
+ });
+}
+</script>
+<button type="button" class="button button-facebook" onclick="FB_login();"><span class="logo"></span><span class="text">Facebook</span></button>                    </div>
+                
+                                            <div class="line_login">
+                            <button type="button"
+                                    class="button button-line"
+                                    onclick="window.location.href = 'https://lnwaccounts.com/3/login/line_login?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications'">
+                                <span class="logo"></span><span class="text">LINE</span></button>
+                        </div>
+                                                        <div class="google_login">
+                                                                        <button type="button" class="button button-google" onclick="window.location.href = 'https://lnwaccounts.com/3/login/google_login?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications';"><span class="logo"></span><span class="text">Google</span></button>
+                    </div>
+                                                    <div class="apple_login">
+                        <button type="button"
+                                class="button button-apple"
+                                onclick="window.location.href = 'https://lnwaccounts.com/3/login/apple_login?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications'">
+                            <span class="logo"></span><span class="text">Apple</span></button>
+                    </div>
+                                </div>
+			</div>
+				</div>
+				<div class="register_div login_div" style="padding: 20px 40px 30px 40px; border-top:1px solid #ddd; ">
+			<div class="register_box">
+				<h2>สมัครสมาชิก</h2>
+				<a href="https://lnwaccounts.com/register?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications"><button style="width: 100%; margin-top: 10px;" type="submit" class="button button-gray trim">สมัครสมาชิก (ฟรี)</button></a>
+				<div style="margin-top: 10px;">ยังไม่มีบัญชี Lnw ? <a href="https://lnwaccounts.com/register?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications">สร้างบัญชีใหม่</a> ไม่มีค่าใช้จ่าย</div>
+			</div>
+		</div>
+			</div>
+</div>
+<script language="JavaScript" type="text/javascript">
+	function is_button_wait(bele){
+		return ($(bele).hasClass('b-wait'));
+	}
+	function button_wait(bele){
+		var $bele = $(bele);
+		var _w = $bele.outerWidth();
+		var _h = $bele.outerHeight();
+		$bele.css('width',_w+'px');
+		$bele.css('height',_h+'px');
+		var _value = $bele.attr('value');
+		if(_value){
+			$bele.attr('_value',_value).attr('value',' ');
+		}
+		$bele.addClass('b-wait').prop('disabled',true);
+	}
+	function button_normal(bele){
+		var $bele = $(bele);
+		$bele.removeClass('b-wait').prop('disabled',false);
+		var _value = $bele.attr('_value');
+		if(_value){
+			$bele.attr('value',_value).removeAttr('_value');
+		}
+		$bele.css('width','');
+		$bele.css('height','');
+	}
+	function _formVaridateError(form,key,result,error){
+		if(result === false){
+			//$(form).find('[name='+key+']').css('backgroundColor','#adff94');
+			$(form).find('[name='+key+']').css({'border-radius': '0px', 'border-color':'green', 'outline-color':'green'});
+			//$(form).find('[name='+key+']').nextAll('.varidate-sign').html('<img src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/correct.png" width="20">');
+			$(form).find('[name='+key+']').nextAll('.error_message').html('').hide();
+		}else{
+			//$(form).find('[name='+key+']').css('backgroundColor','#ff9999');
+			$(form).find('[name='+key+']').css({'border-radius': '0px', 'border-color':'red', 'outline-color':'red'});
+			//$(form).find('[name='+key+']').nextAll('.varidate-sign').html('<img src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/wrong.png" width="20" title="'+result+'">');
+			$(form).find('[name='+key+']').nextAll('.error_message').html(error).show();
+		}
+	}
+	$(document).ready(function() {
+//		$('#login-with-mobile-button, #login-with-password-button, .register_box button').click(function(){
+//			$('.login_plate').addClass('animate2center');
+//		});
+		$('input[name="mobile_number"]').keyup(function(){
+			var mobile_number = $(this).val();
+			$('input[name="username"]').val(mobile_number);
+			if(mobile_number.length == 10) {
+				$.lnwajax.run('request_sms', true, {
+					type: 'POST',
+					url: 'https://lnwaccounts.com/login/check_mobile',
+					data: {mobile_number: mobile_number},
+					dataType: 'json',
+					success: function(response) {
+						if(response === null || response === '' || typeof response === 'undefined'){
+							alert('Fail Connection.\nPlease refresh page.');
+						}else if(response.success){
+							var rdata = response.data;
+							if(rdata.is_registerd) {
+								$('.already_password').slideDown();
+								$('#change_to_password').click(function(){
+									$('.line_clear, #mobile_form, #password_form, #login-with-mobile-button, #login-with-password-button, .social_login, .register_div').show();
+									$('#login-with-lnw').hide();
+									$('#login-with-password-button').click();
+									$('input[name="password"]').focus();
+								});
+							}else{
+								$('.otp_button').addClass('active');
+							}
+						}else{
+							alert(response.key);
+						}
+					}
+				});
+			}else{
+				$('.already_password').hide();
+			}
+		});
+		$('.otp_button').click(function(){
+			var $ele = $(this);
+			var mobile_number = $('input[name="mobile_number"]').val();
+			if($(this).hasClass('active')) {
+				$.lnwajax.run('request_sms', true, {
+					type: 'POST',
+					url: 'https://lnwaccounts.com/login/request_sms',
+					data: {mobile_number: mobile_number},
+					dataType: 'json',
+					success: function(response) {
+						if(response === null || response === '' || typeof response === 'undefined'){
+							alert('Fail Connection.\nPlease refresh page.');
+						}else if(response.success){
+							var rdata = response.data;
+							$ele.removeClass('active');
+							if(typeof rdata.delay_request_sms != 'undefined') {
+								setTimeout(function() {
+									$ele.addClass('active');
+								},rdata.delay_request_sms*1000);
+							}
+							if(typeof rdata.sent != 'undefined') {
+								if(rdata.sent == 1) {
+									$('input[name="otp_password"').prop('disabled', false).focus();
+									$('.otp_message').text('ระบบกำลังส่ง SMS หาคุณ กรุณารอรับสักครู่..');
+								}
+							}
+						}else{
+							alert(response.key);
+						}
+					}
+				});
+			}
+		});
+		$('#login-with-mobile-button, #login-with-password-button').click(function(){
+			$('.line_clear, .social_login, .register_div, #login-with-mobile-button, #login-with-password-button').hide();
+			$('#login-with-lnw').fadeIn();
+			$('#login_form input[name="username"]').focus();
+			if($(this).attr('id')=='login-with-mobile-button'){
+				$('#password_form').hide();
+				$('#login_form input[name="mobile_number"]').focus();
+			}else{
+				$('#mobile_form').hide();
+			}
+					});
+		$(".pass_help").hover(function() {
+			$('.pass_note.suggest_box').show();
+		}, function() {
+			$('.pass_note.suggest_box').hide();
+		});
+		$(".join_help").hover(function() {
+			$('.join_note.suggest_box').show();
+		}, function() {
+			$('.join_note.suggest_box').hide();
+		});
+				$("#login_form").submit(function() {
+			var form = this;
+			if($(':text[name=username]',form).val() == ''){
+				_formVaridateError(form,'username',true,'กรุณากรอก Email ด้วยค่ะ');
+			}else if($(':password[name=password]',form).val() == ''){
+				_formVaridateError(form,'password',true,'กรุณากรอกรหัสผ่านด้วยค่ะ');
+			}else{
+				if(is_button_wait('#login_form .b-login')){
+					return false;
+				}
+				button_wait('#login_form .b-login');
+				$.lnwajax.run('login', true, {
+					type: 'POST',
+					url: 'https://lnwaccounts.com/3/login/submit?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications',
+					data: $(form).serialize(),
+					dataType: 'json',
+					success: function(response) {
+						if(response === null || response === '' || typeof response === 'undefined'){
+							alert('Fail Connection.\nPlease refresh page.\ne1');
+						}else if(response.success){
+							window.location.href = response.data
+						}else{
+							button_normal('#login_form .b-login');
+							var rdata = response.data;
+							if(rdata.account == 'ACCOUNT_BANNED') {
+								_formVaridateError(form,'username',true,'บัญชีของคุณถูกระงับ');
+							} else if(rdata.email == 'EMAIL_NOT_ACTIVATED' || rdata.email == 'USER_NOT_ACTIVATED') {
+								_formVaridateError(form,'username',true,'คุณยังไม่ได้ Activated Account นะคะ กรุณาตรวจสอบ email อีกครั้ง หรือ <a href="https://lnwaccounts.com/activate/resend?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications">ขอ Activate Code ใหม่ค่ะ</a>');
+							} else {
+								_formVaridateError(form,'username',true,'Email หรือ รหัสผ่านไม่ถูกต้องค่ะ');
+								_formVaridateError(form,'password',true,'Email หรือ รหัสผ่านไม่ถูกต้องค่ะ');
+							}
+						}
+					},
+					error: function(){
+						alert('Fail Connection.\nPlease refresh page.\ne2');
+					}
+				});
+							}
+			return false;
+		});
+
+	});
+</script>
+
+	<div align="center" class="product_description">
+		<div align="center"><img src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/lnw_planet_400.png" alt="Lnw Planet" /></div>
+		<h3 style="font-size: 1.2em;">LnwAccounts บัญชีของสมาชิกเทพ</h3>
+		<span>สมาชิกเทพจะมีบัญชีของตนเอง เพื่อเข้าใช้งานผลิตภัณฑ์และบริการต่างๆ ภายใต้<br>บริษัท แอลเอ็นดับเบิ้ลยู จำกัด (Lnw Co., Ltd.) หรือเรียกว่า "<u>เทพ</u>"</span><br /><br />
+			</div>
+	<div class="clear"></div>
+</div>
+
+<!-- Footer -->
+<div style="clear: both;"></div>
+<div id='footer'>
+														<a target="_blank" title="เปิดร้านค้าออนไลน์ฟรี"  href="https://www.lnwshop.com/"><img style="margin-right: 15px;" align="top" src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/new_logo/lnwshop_logo.png" height="12" border="0"></a>
+										<a target="_blank" title="ระบบรับชำระเงินออนไลน์"  href="https://www.lnwpay.com/"><img style="margin-right: 15px;" align="top" src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/new_logo/lnwpay_logo.png" height="12" border="0"></a>
+										<a target="_blank" title=""  href="http://www.lnwdropship.com/"><img style="margin-right: 15px;" align="top" src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/new_logo/lnwdropship_logo.png" height="12" border="0"></a>
+										<a target="_blank" title="ห้างช้อปปิ้งออนไลน์สุดชิค"  href="https://www.lnwmall.com/"><img style="margin-right: 15px;" align="top" src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/new_logo/lnwmall_logo.png" height="12" border="0"></a>
+										<a target="_blank" title=""  href="http://www.lnwpickpack.com/"><img style="margin-right: 15px;" align="top" src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/new_logo/lnwpickpack_logo.png" height="12" border="0"></a>
+										<a target="_blank" title="สังคมออนไลน์ชาวเทพ"  href="https://lnwaccounts.com/"><img style="margin-right: 15px;" align="top" src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/new_logo/lnwaccounts_logo.png" height="12" border="0"></a>
+										<a target="_blank" title="บล็อกอัพเดทข่าวสไตล์เทพ"  href="http://blog.lnw.co.th/"><img style="margin-right: 15px;" align="top" src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/new_logo/lnwblog_logo.png" height="12" border="0"></a>
+			        <a target="_blank" title="LnwX.com"  href="https://www.lnwx.com"><img style="vertical-align: middle" src="https://lnwaccounts.com/system/application/modules/lnwaccounts/_images/lnwx_logo_small.png" height="30" border="0"></a>
+		<div class="footer_text">
+				<span style="display:block; padding-top:5px; color:#777;">
+					<span class="copyright"> &copy; 2020 &nbsp;
+				<a href="https://lnwaccounts.com/" target="_blank" style="color:#333333">LnwAccounts&trade;</a>
+				&nbsp; All rights reserved. </span>&nbsp;<span class="companypart">
+				LnwAccounts เป็นส่วนหนึ่งของ <a href="http://lnw.co.th/" target="_blank" style="color:#333333">บริษัท แอลเอ็นดับเบิ้ลยู จำกัด</a></span>
+				</span>
+	</div>
+	<div class="lnw_lang_now_cover flagRect"><div class="lnw_lang_now lang-th"><i></i><span class="txt">ไทย</span><span class="dtrif">&dtrif;</span></div></div>	</div>
+
+<script type="text/javascript">
+	var gointer = (function($){
+		var lang_vars={},now_lang = 'th';
+		lang_vars = {"th":{"url":"https:\/\/lnwaccounts.com\/th\/3\/login?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications","text":"\u0e44\u0e17\u0e22","status":"public"},"en":{"url":"https:\/\/lnwaccounts.com\/en\/3\/login?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications","text":"English","status":"public"}};
+		function lang_row_html(){
+			var html = '';
+			$.each(lang_vars,function(key,lvar){
+				html += '<div class="lang_btn lang-'+key+(now_lang==key?' selected':'')+'" data-lang="'+key+'"><i></i><span class="txt">'+lvar.text+'</span></div>';
+			});
+			return html;
+		}
+		function open_lnw_lang_box(){
+			var html = '<div id="lnw_lang_box"><div class="actionPopup gointerBox showPopup">\
+					<div class="actionPopupHeader">Choose your language<div class="actionClose"></div></div>\
+						<div class="actionPopupContent">\
+						<div class="cover">\
+						<div class="head lang_head">Language</div>\
+						<div class="lang_row">'+lang_row_html()+'<div class="clear"></div></div>';
+				html += '</div>\
+						</div>\
+						<div class="exchange_rate"></div>\
+						<div class="actionPopupButton" >Change</div>\
+						<div class="clear"></div>\
+				</div></div>';
+			var $box = $(html);
+			$box.appendTo('body');
+			$.lnwbox2('close');
+			$('body').addClass('show_lnwbox');
+			$box.find('.actionClose').click(function(){
+				$box.remove();
+				$('body').removeClass('show_lnwbox');
+			});
+			$box.find('.lang_btn').click(function(){
+				$(this).closest('.lang_row').find('.lang_btn.selected').removeClass('selected');
+				$(this).addClass('selected');
+			});
+			$box.bind('click',function(e){
+				if($(e.target).attr('id') == 'lnw_lang_box'){
+					$box.remove();
+					$('body').removeClass('show_lnwbox');
+				}
+			});
+			$box.find('.actionPopupButton').click(function(){
+				var $popup = $(this).closest('.gointerBox');
+				var lang = $popup.find('.lang_btn.selected').attr('data-lang');
+				gointer.action(lang,null);
+				$('#lnw_lang_box').remove();
+				$('body').removeClass('show_lnwbox');
+			});
+			return;
+		}
+		var gointer = {
+			action: function(lang,currency){
+				if(currency != null && currency != now_currency){
+					if(lang == now_lang){
+						;
+					}else{
+						window.location.href = lang_vars[lang].url;
+					}
+				}else if(lang != now_lang){
+					window.location.href = lang_vars[lang].url;
+				}
+			},
+			init: function(){
+				$('.lnw_lang_now').click(open_lnw_lang_box);
+			},
+			now_lang: function(){
+				return now_lang;
+			},
+			lang_row_html: function(){
+				return lang_row_html();
+			},
+			open_box: open_lnw_lang_box
+		};
+		return gointer;
+	})(jQuery);
+	var __lnwacc__ = (function(window, $, undefined){
+		var jQuery = $;
+		var __lnwacc__ = {
+			init : function(){
+				if(typeof __lnw_lang_text != 'undefined'){
+					language.save(__lnw_lang_text);
+				}
+				gointer.init();
+			},
+			gointer: gointer
+		};
+		return __lnwacc__;
+	})(window,jQuery);
+
+	$(document).ready(function() {
+		__lnwacc__.init();
+	});
+</script></div>
+<script type="text/javascript">		var first_sync_accounts_time = true;
+		function accounts_update__hook_after_check_account() {
+			if(first_sync_accounts_time){
+								first_sync_accounts_time = false;
+			}
+		} 
+	var USERDATA = {};
+	USERDATA.name = '';
+	USERDATA.is_login = 0;
+	USERDATA.avatar = 'https://lnwaccounts.com/images/noAvatar.png';
+	var LNWACCOUNTS_LOGIN_URL = 'https://lnwaccounts.com/login?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications';
+	var LNWACCOUNTS_REGISTER_URL = 'https://lnwaccounts.com/register?continue_url=https%3A%2F%2Flnwaccounts.com%2Fmanage%2Fnotifications';
+</script><script language="JavaScript" type="text/javascript" src="https://lnwaccounts.com/system/application/modules/lnwbar/_js/white2_script.min.js?t=20180824"></script>
+<script type="text/javascript">document.addEventListener("DOMContentLoaded", function(event) { var lnwbar_data = {"webtype":"lnwaccounts","wdata":[],"is_mobile":0};lnwbar.init(lnwbar_data);
+});</script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18903793-18']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
